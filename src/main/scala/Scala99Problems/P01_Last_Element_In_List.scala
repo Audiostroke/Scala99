@@ -10,13 +10,13 @@ object P01_Last_Element_In_List extends App {
 
     def main(args: List[Int]) {
       println("Running Easy Mode")
-      println(lastEasy(list))
+      println(lastEasy(args))
       println("Running Recursive")
-      println(lastRecursive(list))
+      println(lastRecursive(args))
     }
     val list = List(1, 1, 2, 3, 5, 8)
     main(list)
-  
+
   def lastEasy[A](l: List[A]): A = l.last
 
   def lastRecursive[A](l: List[A]): A = l match {

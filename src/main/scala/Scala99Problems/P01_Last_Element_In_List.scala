@@ -7,15 +7,22 @@ package Scala99Problems
   * Example Output: Int = 8
   */
 object P01_Last_Element_In_List extends App {
+
     def main(args: List[Int]) {
-      println("Hello, world")
-      println(last(list))
+      println("Running Easy Mode")
+      println(lastEasy(list))
+      println("Running Recursive")
+      println(lastRecursive(list))
     }
     val list = List(1, 1, 2, 3, 5, 8)
     main(list)
+  
+  def lastEasy[A](l: List[A]): A = l.last
 
-
-
-  def last[A](l: List[A]): A = l.last
+  def lastRecursive[A](l: List[A]): A = l match {
+    case h :: Nil => h
+    case _ :: tail => lastRecursive(tail)
+    case _ => throw new NoSuchElementException
+  }
 
 }
